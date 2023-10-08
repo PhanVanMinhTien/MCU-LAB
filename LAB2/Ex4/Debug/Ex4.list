@@ -517,8 +517,8 @@ void update7SEG(int index){
 	switch (index){
 		case 0:
 			//Display the first 7SEG with led_buffer[0]
-			setTimer1(50);
- 8000480:	2032      	movs	r0, #50	; 0x32
+			setTimer1(100);
+ 8000480:	2064      	movs	r0, #100	; 0x64
  8000482:	f000 f9bd 	bl	8000800 <setTimer1>
 			display7SEG(led_buffer[0]);
  8000486:	4b3e      	ldr	r3, [pc, #248]	; (8000580 <update7SEG+0x128>)
@@ -549,8 +549,8 @@ void update7SEG(int index){
  80004bc:	e05c      	b.n	8000578 <update7SEG+0x120>
 		case 1:
 			//Display the first 7SEG with led_buffer[1]
-			setTimer1(50);
- 80004be:	2032      	movs	r0, #50	; 0x32
+			setTimer1(100);
+ 80004be:	2064      	movs	r0, #100	; 0x64
  80004c0:	f000 f99e 	bl	8000800 <setTimer1>
 			display7SEG(led_buffer[1]);
  80004c4:	4b2e      	ldr	r3, [pc, #184]	; (8000580 <update7SEG+0x128>)
@@ -581,8 +581,8 @@ void update7SEG(int index){
  80004fa:	e03d      	b.n	8000578 <update7SEG+0x120>
 		case 2:
 			//Display the first 7SEG with led_buffer[2]
-			setTimer1(50);
- 80004fc:	2032      	movs	r0, #50	; 0x32
+			setTimer1(100);
+ 80004fc:	2064      	movs	r0, #100	; 0x64
  80004fe:	f000 f97f 	bl	8000800 <setTimer1>
 			display7SEG(led_buffer[2]);
  8000502:	4b1f      	ldr	r3, [pc, #124]	; (8000580 <update7SEG+0x128>)
@@ -613,8 +613,8 @@ void update7SEG(int index){
  8000538:	e01e      	b.n	8000578 <update7SEG+0x120>
 		case 3:
 			//Display the first 7SEG with led_buffer[3]
-			setTimer1(50);
- 800053a:	2032      	movs	r0, #50	; 0x32
+			setTimer1(100);
+ 800053a:	2064      	movs	r0, #100	; 0x64
  800053c:	f000 f960 	bl	8000800 <setTimer1>
 			display7SEG(led_buffer[3]);
  8000540:	4b0f      	ldr	r3, [pc, #60]	; (8000580 <update7SEG+0x128>)
@@ -671,8 +671,8 @@ int main(void)
 
   /* USER CODE BEGIN Init */
 //  int status = 1;
-  setTimer1(50);
- 8000590:	2032      	movs	r0, #50	; 0x32
+  setTimer1(100);
+ 8000590:	2064      	movs	r0, #100	; 0x64
  8000592:	f000 f935 	bl	8000800 <setTimer1>
   setTimer2(100);
  8000596:	2064      	movs	r0, #100	; 0x64
