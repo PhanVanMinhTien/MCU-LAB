@@ -5060,3 +5060,7 @@
 2023-10-09 14:34:48,132 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
 2023-10-09 14:34:48,134 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
 2023-10-09 14:34:48,135 [ERROR] LogOutputStream:74 - [STDERR_REDIRECT] 	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+2023-10-09 14:34:59,253 [INFO] Activator:177 - 
+
+
+2023-10-09 14:34:59,255 [INFO] Activator:178 - !SESSION log4j initialized
