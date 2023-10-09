@@ -1,4 +1,4 @@
-12:43:12 **** Incremental Build of configuration Debug for project Ex9 ****
+15:07:01 **** Incremental Build of configuration Debug for project Ex9 ****
 make -j12 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32F103x6 -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
 arm-none-eabi-gcc -o "Ex9.elf" @"objects.list"   -mcpu=cortex-m3 -T"E:\MCU-LAB\LAB2\Ex9\STM32F103C6UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Ex9.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
@@ -7,9 +7,9 @@ Finished building target: Ex9.elf
 arm-none-eabi-size   Ex9.elf 
 arm-none-eabi-objdump -h -S  Ex9.elf  > "Ex9.list"
 arm-none-eabi-objcopy  -O ihex  Ex9.elf  "Ex9.hex"
+arm-none-eabi-objcopy  -O binary  Ex9.elf  "Ex9.bin"
    text	   data	    bss	    dec	    hex	filename
    8892	     36	   1684	  10612	   2974	Ex9.elf
-arm-none-eabi-objcopy  -O binary  Ex9.elf  "Ex9.bin"
 Finished building: default.size.stdout
  
 Finished building: Ex9.hex
@@ -19,5 +19,5 @@ Finished building: Ex9.bin
 Finished building: Ex9.list
  
 
-12:43:13 Build Finished. 0 errors, 0 warnings. (took 682ms)
+15:07:01 Build Finished. 0 errors, 0 warnings. (took 767ms)
 
