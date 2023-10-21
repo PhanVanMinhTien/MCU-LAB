@@ -27,23 +27,23 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
  11 .ARM.attributes 00000029  00000000  00000000  00020024  2**0
                   CONTENTS, READONLY
- 12 .debug_info   0000885f  00000000  00000000  0002004d  2**0
+ 12 .debug_info   00008887  00000000  00000000  0002004d  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 13 .debug_abbrev 0000163c  00000000  00000000  000288ac  2**0
+ 13 .debug_abbrev 0000163c  00000000  00000000  000288d4  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 14 .debug_aranges 000009b0  00000000  00000000  00029ee8  2**3
+ 14 .debug_aranges 000009b8  00000000  00000000  00029f10  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 15 .debug_ranges 000008f8  00000000  00000000  0002a898  2**3
+ 15 .debug_ranges 00000900  00000000  00000000  0002a8c8  2**3
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 16 .debug_macro  00016372  00000000  00000000  0002b190  2**0
+ 16 .debug_macro  00016372  00000000  00000000  0002b1c8  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 17 .debug_line   0000969c  00000000  00000000  00041502  2**0
+ 17 .debug_line   000096fc  00000000  00000000  0004153a  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 18 .debug_str    00082293  00000000  00000000  0004ab9e  2**0
+ 18 .debug_str    0008229a  00000000  00000000  0004ac36  2**0
                   CONTENTS, READONLY, DEBUGGING, OCTETS
- 19 .comment      00000053  00000000  00000000  000cce31  2**0
+ 19 .comment      00000053  00000000  00000000  000cced0  2**0
                   CONTENTS, READONLY
- 20 .debug_frame  000027b8  00000000  00000000  000cce84  2**2
+ 20 .debug_frame  000027dc  00000000  00000000  000ccf24  2**2
                   CONTENTS, READONLY, DEBUGGING, OCTETS
 
 Disassembly of section .text:
@@ -915,6 +915,11 @@ void clearRow(){
  8000748:	40010c00 	.word	0x40010c00
 
 0800074c <setRow>:
+	  if((code >> 6) & 0x01)
+		  HAL_GPIO_WritePin(ENM1_GPIO_Port, ENM1_Pin, RESET);
+	  if((code >> 7) & 0x01)
+		  HAL_GPIO_WritePin(ENM0_GPIO_Port, ENM0_Pin, RESET);
+}
 void setRow(uint8_t code){
  800074c:	b580      	push	{r7, lr}
  800074e:	b082      	sub	sp, #8
@@ -1126,7 +1131,7 @@ void updateLEDMatrix(int index_led_matrix){
  80008e0:	781b      	ldrb	r3, [r3, #0]
  80008e2:	4618      	mov	r0, r3
  80008e4:	f7ff ff32 	bl	800074c <setRow>
-      }
+}
  80008e8:	bf00      	nop
  80008ea:	3708      	adds	r7, #8
  80008ec:	46bd      	mov	sp, r7

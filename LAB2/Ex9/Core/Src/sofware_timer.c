@@ -1,4 +1,4 @@
-/*
+  /*
  * software_timer.c
  *
  *  Created on: Oct 8, 2023
@@ -8,6 +8,7 @@
 #include "software_timer.h"
 int timer0_counter = 0;
 int timer0_flag = 0;
+
 int timer1_counter = 0;
 int timer1_flag = 0;
 int timer2_counter = 0;
